@@ -1,0 +1,57 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class entrada_de_dados {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		//Nome
+		String x;
+		System.out.println("Digite o nome: ");
+		x = sc.next();
+		
+		//Número inteiro
+		int y;
+		System.out.println("Digite o número inteiro: ");
+		y = sc.nextInt();
+		
+		
+		//Número float
+		double z;
+		System.out.println("Digite o número float: ");
+		z = sc.nextFloat();
+		
+		//Para char
+		char a;
+		System.out.println("Digite um caractere: ");
+		a = sc.next().charAt(0);
+		
+		//Exibindo
+		System.out.println("Você digitou: " + x);
+		System.out.println("Você digitou: " + y);
+		System.out.printf("Você digitou: %.1f\n", z);
+		System.out.printf("Você digitou: " + a);
+		
+		//Vários dados na mesma linha
+		String c;
+		int d;
+		double e;
+		
+		//Entrada de dados string
+		System.out.println("Digite os dados na mesma linha: ");
+		c = sc.next();
+		d = sc.nextInt();
+		e = sc.nextDouble();
+		
+		//Exibindo dados
+		System.out.println("dados digitados: ");
+		System.out.println(c);
+		System.out.println(d);
+		System.out.println(e);
+		
+		sc.close();
+	}
+
+}
