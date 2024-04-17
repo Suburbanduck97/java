@@ -1,0 +1,28 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class Primeiras_Atividades {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		//Declarando variáveis.
+		int numero1, numero2, somaNumeros;
+		
+		//Leitura de dados.
+		System.out.print("Digite o 1º valor: ");
+			numero1 = sc.nextInt();
+		System.out.print("Digite o 2º valor: ");
+			numero2 = sc.nextInt();
+		
+		//Cálculos do sistema.
+		somaNumeros = numero1 + numero2;
+		
+		//Exibindo Resultados.
+		System.out.println("\nValor da soma: " + somaNumeros);
+		sc.close();
+
+	}
+
+}
