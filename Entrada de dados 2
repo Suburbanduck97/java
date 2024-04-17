@@ -1,0 +1,45 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class ler_ate_quebra_de_linha {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		//Para ler com os espaços, a linha inteira
+		String frase;
+		
+		System.out.print("Digite uma frase qualquer: ");
+		frase = sc.nextLine();
+		System.out.println("Frase: " + frase);
+		
+		//Modelo fflush();
+		int valor;
+		String s1, s2, s3;
+		char c1;
+		
+		System.out.println("Digite um número: ");
+		valor = sc.nextInt();
+		sc.nextLine(); //Funciona como um fflush.
+		
+		System.out.println("Digite frases: ");
+		s1 = sc.nextLine();
+		s2 = sc.nextLine();
+		s3 = sc.nextLine();
+		
+		System.out.println("Digite um caractere: ");
+		c1 = sc.next().charAt(0);
+		
+		System.out.println("Exibindo dados digitados: ");
+		System.out.println(valor);
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
+		System.out.println(c1);
+		
+		sc.close();
+
+	}
+
+}
