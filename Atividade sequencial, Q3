@@ -1,0 +1,34 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class Primeiras_Atividades {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int A, B, C, D, diferencaDoProduto;
+		
+		
+		//Lendo dados
+		System.out.print("Digite o valor de A: ");
+			A = sc.nextInt();
+		System.out.print("Digite o valor de B: ");
+			B = sc.nextInt();
+		System.out.print("Digite o valor de C: ");
+			C = sc.nextInt();
+		System.out.print("Digite o valor de D: ");
+			D = sc.nextInt();
+			
+		//Cálculo do sistema
+		diferencaDoProduto = ((A*B) - (C*D));
+		
+		//Exibindo dados
+		System.out.print("\n");
+		System.out.println("Diferença: " + diferencaDoProduto);
+		
+		sc.close();
+
+	}
+
+}
