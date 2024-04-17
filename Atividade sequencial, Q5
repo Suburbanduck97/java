@@ -1,0 +1,46 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class Primeiras_Atividades {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int codigoPeca1, quantidadePecas1;
+		int codigoPeca2, quantidadePecas2;
+		double valorUnitario1, valorUnitario2, valorTotal1, valorTotal2;
+		
+		
+		
+		//Leitura de dados
+			System.out.print("Digite o código do produto 1: ");
+				codigoPeca1 = sc.nextInt();
+					System.out.print("Digite a quantidade de peças: ");
+						quantidadePecas1 = sc.nextInt();
+							System.out.print("Valor unitário do produto 1: ");
+								valorUnitario1 = sc.nextDouble();
+							System.out.print("\nDigite o código do produto 2: ");
+						codigoPeca2 = sc.nextInt();
+					System.out.print("Digite a quantidade de peças: ");
+				quantidadePecas2 = sc.nextInt();
+			System.out.print("Valor unitário do produto 1: ");
+				valorUnitario2 = sc.nextDouble();
+				
+		//Cálculo do sistema
+			valorTotal1 = valorUnitario1 * quantidadePecas1;
+			valorTotal2 = valorUnitario2 * quantidadePecas2;
+				
+		//Exibição de dados
+			System.out.println("\nCódigo produto 1: " + codigoPeca1);
+			System.out.println("Quantidade de peças: " + quantidadePecas1);
+			System.out.printf("Valor Total: R$%.2f", valorTotal1);
+			System.out.println("\n\nCódigo produto 2: " + codigoPeca1);
+			System.out.println("Quantidade de peças: " + quantidadePecas1);
+			System.out.printf("Valor Total: R$%.2f", valorTotal2);
+			
+		sc.close();
+
+	}
+
+}
