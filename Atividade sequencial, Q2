@@ -1,0 +1,28 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class Primeiras_Atividades {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		//Declarando variáveis
+		double raio, π = 3.14159, area;
+		
+		//Leituraas de dados
+		System.out.println("= Informe o valor do raio =");
+			System.out.print("Raio: ");
+				raio = sc.nextDouble();
+		
+		//Cálculo da área
+		area = π * Math.pow(raio, 2.0);
+		
+		//Exibindo Resultado
+		System.out.printf("Valor da área: %.4f",area);
+		
+		sc.close();
+
+	}
+
+}
