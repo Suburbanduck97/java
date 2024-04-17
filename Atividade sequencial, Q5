@@ -1,6 +1,6 @@
 package primeiro_projeto_udemy;
 
-import java.util.Scanner;
+import java.util.Scanner; 
 
 public class Primeiras_Atividades {
 
