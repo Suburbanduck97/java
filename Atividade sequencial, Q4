@@ -1,0 +1,30 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class Primeiras_Atividades {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int numeroFuncionario;
+		double horaTrabalho, valorHora, diaMes = 30, salario;
+		
+		//Leitura de dados.
+		System.out.print("Digite seu número de cadastro: ");
+			numeroFuncionario = sc.nextInt();
+		System.out.print("Digite o valor da hora trabalhada: ");
+			valorHora = sc.nextDouble();
+		System.out.print("Digite a hora de trabalho: ");
+			horaTrabalho = sc.nextDouble();
+		
+		//Cálculo do sistema
+		salario = (valorHora * horaTrabalho) * diaMes;	
+		
+		//Exibindo Resultado
+		System.out.println("\nSeu número: " + numeroFuncionario );
+		System.out.printf("Salário: R$%.2f", salario);
+		sc.close();
+
+	}
+
+}
