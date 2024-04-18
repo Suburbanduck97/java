@@ -1,0 +1,28 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class Estruturas_Condicionais {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int numero;
+		
+		//Leitura de dados
+			System.out.print("Digite um número inteiro: ");
+				numero = sc.nextInt();
+	   
+	   //Estrutura condicional simples
+		    if(numero > 0) {
+		    	System.out.println(numero + " É POSITIVO.");
+		    }
+		    else {
+		    	System.out.println(numero + " É NEGATIVO.");
+		    }
+		    
+		sc.close();
+
+	}
+
+}
