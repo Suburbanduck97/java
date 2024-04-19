@@ -1,0 +1,53 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class Estruturas_Condicionais {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		//Declarando variáveis
+		int codigo, quantidade;
+		double valorTotal;
+		
+		//Leitura de dados
+		System.out.println("Código \tEspecificação");
+		System.out.println("1 - Cachorro Quente \n2 - X-Salda \n3 - X-Bancon \n4 - Torrada Simples \n5 - Refrigerante");
+		System.out.print("Digite o código: ");
+			codigo = sc.nextInt();
+		System.out.print("Digite a Quantidade: ");
+			quantidade = sc.nextInt();	
+		
+		//Estrutura Condicional Encadeada
+			if(codigo == 1) {
+				System.out.println("\nValor: R$4.00");
+				valorTotal = quantidade * 4.0;
+				System.out.printf("Valor Total a pagar: %.2f",valorTotal);
+			}
+			else if(codigo == 2) {
+				System.out.println("\nValor: R$4.50");
+				valorTotal = quantidade * 4.5;
+				System.out.printf("Valor Total a pagar: %.2f",valorTotal);
+			}
+			else if(codigo == 3) {
+				System.out.println("\nValor: R$5.00");
+				valorTotal = quantidade * 5.0;
+				System.out.printf("Valor Total a pagar: %.2f",valorTotal);
+			}
+			else if(codigo == 4) {
+				System.out.println("\nValor: R$2.00");
+				valorTotal = quantidade * 2.0;
+				System.out.printf("Valor Total a pagar: %.2f",valorTotal);
+			}
+			else if(codigo == 5) {
+				System.out.println("\nValor: R$1.50");
+				valorTotal = quantidade * 1.5;
+				System.out.printf("Valor Total a pagar: %.2f",valorTotal);
+			}
+			
+		sc.close();
+
+	}
+
+}
