@@ -1,0 +1,26 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class Estruturas_Condicionais {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int numero;
+		
+		//Leitura de dados
+			System.out.print("Digite um número inteiro qualquer: ");
+				numero = sc.nextInt();
+				
+		//Estrutura Condicional Simples
+			if(numero % 2 == 0) 
+				System.out.println(numero + " É Par.");
+			else
+				System.out.println(numero + " É ímpar.");
+		    
+		sc.close();
+
+	}
+
+}
