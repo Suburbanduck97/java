@@ -1,0 +1,31 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class Estruturas_Condicionais {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		//Declarando variáveis
+			int A, B;
+		
+		//Leitura de dados
+			System.out.print("Digite o valor de A: ");
+				A = sc.nextInt();
+			System.out.print("Digite o valor de B: ");
+				B = sc.nextInt();
+				
+		//Estrutura Condicional Encadeada
+			if(A % B == 0)
+				System.out.printf("%d e %d são multiplos",A,B);
+			else if(B % A == 0)
+				System.out.printf("%d e %d são multiplos",A,B);
+			else
+				System.out.printf("%d e %d não são multiplos",A,B);
+		
+		sc.close();
+
+	}
+
+}
