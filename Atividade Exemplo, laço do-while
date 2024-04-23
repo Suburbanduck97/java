@@ -1,0 +1,30 @@
+package primeiro_projeto_udemy;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class estruturas_de_repetição {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		double temperatura, conversão = 0;
+		char resposta;
+		
+		System.out.println("=== Conversão de Temperatura °C para temperatura °F ===\n");
+		do {
+				System.out.print("Digite a temperatura em Celsius (°C): ");
+					temperatura = sc.nextDouble();
+						conversão = ((9 * temperatura) / 5) + 32;
+					System.out.printf("\nConversão para Fahrenheit (°F): %.1f", conversão);
+				System.out.println("\n\nDeseja Fazer uma nova conversão? (S) para Sim ou (N) para Não: ");
+			resposta = sc.next().charAt(0);
+		}
+		while(resposta == 'S' || resposta == 's');
+		
+		sc.close();
+
+	}
+
+}
