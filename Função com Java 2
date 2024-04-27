@@ -3,7 +3,7 @@ package primeiro_projeto_udemy;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Função_Java2 {
+public class Função_Java2 { 
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
