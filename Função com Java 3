@@ -1,0 +1,40 @@
+package primeiro_projeto_udemy;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Função_Java2 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		int a, b, c, d, resultado;
+		
+		System.out.println("Diferença do produto");
+			System.out.print("A = ");
+				a = sc.nextInt();
+			System.out.print("B = ");
+				b = sc.nextInt();
+			System.out.print("C = ");
+				c = sc.nextInt();
+			System.out.print("D = ");
+				d = sc.nextInt();
+		
+		resultado = diferencaDoProduto(a, b, c, d);
+		exibindo(resultado);
+				
+		sc.close();
+	}
+	public static int diferencaDoProduto(int vA, int vB, int vC, int vD) {
+		int diferencaDoProduto = 0;
+		diferencaDoProduto = (vA * vB) - (vC * vD); 
+		return diferencaDoProduto;
+	}
+	public static void exibindo(int result){
+		System.out.println("Diferença do produto: " + result);
+	}
+	
+}
