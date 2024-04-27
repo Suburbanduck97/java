@@ -1,0 +1,33 @@
+package primeiro_projeto_udemy;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Função_Java2 {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		double area, raio;
+		
+		System.out.println("=== Cálculo da área do circulo ===\n");
+		
+		System.out.print("Digite o valor do raio da circunferência: ");
+			raio = sc.nextDouble();
+			
+		area = formula(raio);
+		areaDoCirculo(area);
+			
+		sc.close();
+	}
+	public static double formula(double raio) {
+		double pi = 3.14159;
+		double areaDoCirculo = 0.0;
+		areaDoCirculo = pi * Math.pow(raio, 2.0);
+		return areaDoCirculo;
+	}
+	
+	public static void areaDoCirculo(double resultado) {
+		System.out.printf("Área da circunferência: %.4f", resultado);
+	}
+}
