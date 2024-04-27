@@ -1,0 +1,83 @@
+package primeiro_projeto_udemy;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Função_Java2 { 
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		int primeiroNumero, segundoNumero;
+		
+		System.out.println("Digite dois numeros Inteiros quaisquer: ");
+			primeiroNumero = sc.nextInt();
+			segundoNumero = sc.nextInt();
+		System.out.println("=== Resultado ===");
+		
+		System.out.println("Positivo ou negativo:");
+			positivoOuNegativo(primeiroNumero, segundoNumero);
+			System.out.println("\n\nPar ou Impar:");
+			imparOuPar(primeiroNumero, segundoNumero);
+		System.out.println("\n\nMultiplos:");
+		multiplos(primeiroNumero, segundoNumero);
+		
+		sc.close();
+	}
+	
+	public static int positivoOuNegativo(int a, int b) {
+		int valor;
+		if(a > 0){
+			valor = a;
+			System.out.printf("%d é Positivo", valor);
+		}
+		else{
+			valor = a;
+			System.out.printf("%d é Negativo", valor);
+		}
+		
+		if(b > 0) {
+			valor = b;
+			System.out.printf("\n%d é Positivo", valor);
+		}
+		else {
+			valor = b;
+			System.out.printf("\n%d é Negativo", valor);
+		}
+		return valor;
+	}
+	
+	public static int imparOuPar(int vA, int vB) {
+		int result;
+		if (vA % 2 == 0) {
+			result = vA;
+			System.out.printf("%d é par", result);
+		}
+		else {
+			result = vA;
+			System.out.printf("%d é ímpar", result);
+		}
+		
+		if (vB % 2 == 0) {
+			result = vB;
+			System.out.printf("\n%d é par", result);
+		}
+		else {
+			result = vB;
+			System.out.printf("\n%d é ímpar", result);
+		}
+		return result;
+	}
+	
+	public static void multiplos(int mA, int mB) {
+		if (mA % mB == 0) {
+			System.out.printf("%d e %d são multiplos", mA,mB);
+		}
+		else if(mB % mA == 0) {
+			System.out.printf("\n%d e %d são multiplos", mB,mA);
+		}
+		else {
+			System.out.printf("%d e %d não são multiplos", mA,mB);
+		}
+	}
+}
