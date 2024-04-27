@@ -1,0 +1,32 @@
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+
+public class Exercícios_Udemy {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int primeiroNumero = 0, segundoNumero = 0, resultado;
+		
+		System.out.print("Digite um valor inteiro: ");
+			primeiroNumero = sc.nextInt();
+		System.out.print("Digite outro valor inteiro: ");
+			segundoNumero = sc.nextInt();
+		
+		resultado = soma(primeiroNumero, segundoNumero);
+		resultados(resultado);
+			
+		sc.close();
+		
+	}
+	public static int soma(int a, int b) {
+		int somaNumeros = 0;
+		somaNumeros = a + b;
+		return somaNumeros;
+	}
+	
+	public static void resultados(int oprecaoResult) {
+		System.out.println("\n O resultado da soma é: " + oprecaoResult);
+	}
+}
