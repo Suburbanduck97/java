@@ -1,0 +1,80 @@
+// Entidades, objeto.
+package entites;
+
+public class Triangulo {
+	
+	public double a;
+	public double b;
+	public double c;
+}
+
+// Programa principal.
+package primeiro_projeto_udemy;
+
+import java.util.Scanner;
+import java.util.Locale;
+import entites.Triangulo; // Importando a entidade Triangulo.
+
+public class Poo_java {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		double areaX, areaY;
+		
+		Triangulo x, y; // Iniciando entidade.
+		x = new Triangulo();
+		y = new Triangulo();
+		
+		System.out.println("Digite o valor dos lados do triângulo X:");
+		System.out.print("Lado A: ");
+			x.a = sc.nextDouble();
+		System.out.print("Lado B: ");
+			x.b = sc.nextDouble();
+		System.out.print("Lado C: ");
+			x.c = sc.nextDouble();
+		System.out.println("Digite o valor dos lados do triângulo Y:");
+		System.out.print("Lado A: ");
+			y.a = sc.nextDouble();
+		System.out.print("Lado B: ");
+			y.b = sc.nextDouble();
+		System.out.print("Lado C: ");
+			y.c = sc.nextDouble();
+		
+			areaX = areaDoTrianguloX(x.a, x.b, x.c);
+			areaY = areaDoTrianguloY(y.a, y.b, y.c);
+			resultado(areaX, areaY);
+		
+		sc.close();
+
+	}
+	
+	public static double areaDoTrianguloX(double lado_a, double lado_b, double lado_c) {
+		double area, p;
+		p = (lado_a + lado_b + lado_c) / 2;		
+		area = Math.sqrt(p*(p - lado_a) * (p - lado_b) * (p - lado_c));
+		return area;
+	}
+	
+	public static double areaDoTrianguloY(double lado_a, double lado_b, double lado_c) {
+		double area, p;
+		p = (lado_a + lado_b + lado_c) / 2;
+		area = Math.sqrt(p*(p - lado_a) * (p - lado_b) * (p - lado_c));
+		return area;
+	}
+	
+	public static void resultado(double areaX, double areaY) {
+		System.out.printf("Área do tirângulo X: %.4f", areaX);
+		System.out.printf("\nÁrea do triângulo Y: %.4f", areaY);
+		
+		
+		if(areaX > areaY)
+			System.out.println("\nÁrea mais larga: X");
+		else if(areaX < areaY)
+			System.out.println("\nÁrea mais larga: Y");
+		else
+			System.out.printf("\nAs áreas são iguais entre si");
+	}
+
+}
