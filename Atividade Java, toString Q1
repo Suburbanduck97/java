@@ -1,0 +1,56 @@
+// Entidades
+package entites;
+
+public class Rectangle {
+	public double base;
+	public double altura;
+	
+	public double area_retangulo() {
+		return base * altura;
+	}
+	
+	public double perimetro_retangulo() {
+		// Soma dos lados.
+		return 2*(base+altura);
+	}
+	
+	public double diagonal_retangulo() {
+		double diagonal;
+		diagonal = Math.sqrt(Math.pow(altura,2.0) + Math.pow(base, 2.0));
+		return diagonal;
+	}
+	
+	public String toString() {
+		return "Area = " 
+				+ String.format("%.2f", area_retangulo())
+				+ "\nPerímetro = " 
+				+ String.format("%.2f", perimetro_retangulo())
+				+ "\nDiagonal = "
+				+ String.format("%.2f", diagonal_retangulo());
+	}
+}
+
+// Programa principal
+package Curso_Udemy;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entites.Rectangle;
+
+public class atividades_entites {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Rectangle retangulo = new Rectangle();
+		System.out.println("Digite a largura e a base do triângulo: ");
+		System.out.print("Digite a largura: ");
+		retangulo.altura = sc.nextDouble();
+		System.out.print("Digite a altura: ");
+		retangulo.base = sc.nextDouble();
+		
+		System.out.println(retangulo);
+		sc.close();
+	}
+}
