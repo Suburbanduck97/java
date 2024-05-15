@@ -1,0 +1,78 @@
+// Entidades.
+package entites;
+
+public class Product {
+	public String name_product;
+	public double price_product;
+	public int quanty_stock;
+	
+	public double total_value() { 
+		return price_product * quanty_stock;
+	}
+	 										
+	public void add_products(int quantity) {
+		// A função this serve para indicar que apenas a variável quanty_stock do objeto será alterada.
+		this.quanty_stock += quantity;
+	}
+		
+	public void removed_products(int quantity) {
+		this.quanty_stock -= quantity;
+		
+	}
+	
+	public String toString() {
+		return name_product
+				+ ", $ "
+				+ String.format("%.2f", price_product) // Máscara de formatação strings.
+				+ ", "
+				+ quanty_stock
+				+ " units, Total: $ "
+				+ String.format("%.2f", total_value());
+	}
+}
+
+// Função principal
+package atividade_objeto;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entites.Product;
+
+public class Estoque_and_product {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Product product = new Product(); // Importando dados a serem modificados, inseridos ou exibidos. 
+		
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		product.name_product = sc.nextLine();
+		System.out.print("Price: ");
+		product.price_product = sc.nextDouble();
+		System.out.print("Quantity in stock: ");
+		product.quanty_stock = sc.nextInt();
+		
+		System.out.println("Product data:" + product);
+		
+		System.out.println();
+		System.out.print("Enter the number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+		product.add_products(quantity); // Atualização da quantidade dentro do objeto product
+		
+		System.out.println();
+		System.out.println("Update data: " + product);
+		
+		System.out.println();
+		System.out.print("Enter the number of products to be removed from stock: ");
+		quantity = sc.nextInt();
+		product.removed_products(quantity);
+		
+		System.out.println();
+		System.out.println("Update data: " + product);
+		
+		sc.close();
+	}
+
+}
