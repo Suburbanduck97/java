@@ -1,76 +1,79 @@
-// Entidades.
 package entites;
 
-public class Product {
-	public String name_product;
-	public double price_product;
-	public int quanty_stock;
+public class Produto {
+	// Declarando variáveis do objeto.
+	public String nome;
+	public double preco;
+	public int quantidade;
 	
-	public double total_value() { 
-		return price_product * quanty_stock;
+	public double valorTotalNoEstoque() {
+		return preco * quantidade;
 	}
-	 										
-	public void add_products(int quantity) {
-		// A função this serve para indicar que apenas a variável quanty_stock do objeto será alterada.
-		this.quanty_stock += quantity;
+	
+	public void adicionandoProdutos(int quantidade) {
+		// A função recebeu um parâmetro do código fonte.
+		// "This" foi utilizado para modificar a variável do objeto.
+		this.quantidade += quantidade;
 	}
-		
-	public void removed_products(int quantity) {
-		this.quanty_stock -= quantity;
-		
+	
+	public void removendoProdutos(int quantidade) {
+		this.quantidade -= quantidade;
 	}
 	
 	public String toString() {
-		return name_product
-				+ ", $ "
-				+ String.format("%.2f", price_product) // Máscara de formatação strings.
-				+ ", "
-				+ quanty_stock
-				+ " units, Total: $ "
-				+ String.format("%.2f", total_value());
+		return nome
+			+ ", $ "
+			+ String.format("%.2f", preco)
+			+ " , "
+			+ quantidade
+			+" unidade, Total: $ "
+			+ String.format("%.2f", valorTotalNoEstoque());
 	}
 }
 
-// Função principal
-package atividade_objeto;
+==================================================================================================================
+
+package udemy;
 
 import java.util.Locale;
 import java.util.Scanner;
-import entites.Product;
+import entites.Produto; // Importação do objeto "Produto".
 
-public class Estoque_and_product {
+public class Exercicio_2 {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Product product = new Product(); // Importando dados a serem modificados, inseridos ou exibidos. 
+		Produto produto = new Produto(); // Permite a manipulação do objeto.
 		
-		System.out.println("Enter product data: ");
-		System.out.print("Name: ");
-		product.name_product = sc.nextLine();
-		System.out.print("Price: ");
-		product.price_product = sc.nextDouble();
-		System.out.print("Quantity in stock: ");
-		product.quanty_stock = sc.nextInt();
-		
-		System.out.println("Product data:" + product);
+		System.out.println("Insira os dados do produto: ");
+		System.out.print("Nome: ");
+		produto.nome = sc.nextLine();
+		System.out.println("Preço: ");
+		produto.preco = sc.nextDouble();
+		System.out.println("Quantidade no estoque: ");
+		produto.quantidade = sc.nextInt();
 		
 		System.out.println();
-		System.out.print("Enter the number of products to be added in stock: ");
-		int quantity = sc.nextInt();
-		product.add_products(quantity); // Atualização da quantidade dentro do objeto product
+		System.out.println("Dados do produto: " + produto);
 		
 		System.out.println();
-		System.out.println("Update data: " + product);
+		System.out.print("Digite o número de produtos que deseja adicionar: ");
+		int quantidade = sc.nextInt();
+		produto.adicionandoProdutos(quantidade);
 		
 		System.out.println();
-		System.out.print("Enter the number of products to be removed from stock: ");
-		quantity = sc.nextInt();
-		product.removed_products(quantity);
+		System.out.println("Dados atualizados: " + produto);
 		
 		System.out.println();
-		System.out.println("Update data: " + product);
+		System.out.print("Digite a quantidade de produtos que deseja remover do estoque: ");
+		quantidade = sc.nextInt();
+		produto.removendoProdutos(quantidade);
+		
+		System.out.println();
+		System.out.println("Dados atualizados: " +produto);
+		
 		
 		sc.close();
 	}
