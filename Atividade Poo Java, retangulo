@@ -1,0 +1,60 @@
+package entites;
+
+public class Retangulo {
+	public double largura;
+	public double altura;
+	
+	public double areaDoRetangulo() {
+		double area = largura * altura;
+		return area;
+	}
+	
+	public double perimetroDoRetangulo() {
+		double perimetro = 2 * (largura + altura);
+		return perimetro;
+	}
+	
+	public double diagonalDoRetangulo() {
+		double diagonal = Math.sqrt(Math.pow(largura,2.0) + Math.pow(altura, 2.0));
+		return diagonal;
+	}
+
+	public String toString() {
+		return "Area = "
+			+ String.format("%.2f", areaDoRetangulo())
+			+ "\nPerimetro = "
+			+ String.format("%.2f", perimetroDoRetangulo())
+			+ "\nDiagonal = "
+			+ String.format("%.2f", diagonalDoRetangulo());
+	}
+}
+
+===========================================================================
+
+package udemy;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entites.Retangulo;
+
+
+public class Atividade {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Retangulo retangulo = new Retangulo();
+		
+		System.out.println("Digite os dados do retângulo: ");
+		System.out.print("Largura: ");
+		retangulo.largura = sc.nextDouble();
+		System.out.print("Altura: ");
+		retangulo.altura = sc.nextDouble();
+		
+		System.out.println(retangulo);
+		sc.close();
+
+	}
+
+}
