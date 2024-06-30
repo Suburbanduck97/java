@@ -1,0 +1,61 @@
+package entites;
+
+public class Funcionario {
+	public String nome;
+	public double salarioBruto;
+	public double imposto;
+	
+	public double salarioLiquido() {
+		return salarioBruto - imposto;
+	}
+	
+	public void incrementoAoSalario(double porcentagem) {
+		double acrescimo = salarioBruto * (porcentagem / 100);
+		salarioBruto += acrescimo;
+	}
+	
+	public String toString() {
+		return nome
+			+ " , $ "
+			+String.format("%.2f",salarioBruto);
+	}
+
+}
+========================================================================================
+package curso;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entites.Funcionario;
+
+public class Atividade2 {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Funcionario funcionario = new Funcionario();
+		
+		System.out.println("=== Digite seus dados abaixo ===");
+		System.out.print("Nome: ");
+		funcionario.nome = sc.nextLine();
+		System.out.print("Salário Bruto: ");
+		funcionario.salarioBruto = sc.nextDouble();
+		System.out.print("Digite o imposto total no seu salário: ");
+		funcionario.imposto = sc.nextDouble();
+		
+		System.out.println();
+		System.out.println("Funcionário: " + funcionario);
+		
+		System.out.print("\nDigite a porcentagem que deseja adicionar ao seu salário: ");
+		double porcentagem = sc.nextDouble(); 
+		funcionario.incrementoAoSalario(porcentagem);
+		
+		System.out.println();
+		System.out.println("Atualização dos dados do funcionário: " + funcionario);
+		
+		sc.close();
+
+	}
+
+}
