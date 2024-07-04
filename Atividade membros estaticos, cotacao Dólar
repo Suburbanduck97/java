@@ -1,0 +1,44 @@
+package util;
+
+public class CotacaoDolar {
+	public static final double taxaDoDolar = 1.06;
+	
+	public static double conversaoDeBrlParaDolar(double valorDolar, double valorDeTroca) {
+		return valorDeTroca * (valorDolar * taxaDoDolar);
+	}
+}
+===============================================================================
+
+package entites;
+
+import java.util.Locale;
+import java.util.Scanner;
+import util.CotacaoDolar;
+
+public class Atividade_Dolar {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Digite o valor do dolar: $ ");
+		double valorDoDolar = sc.nextDouble();
+		
+		System.out.print("Quanto você deseja receber? $ ");
+		double receberEmDolar = sc.nextDouble();
+		
+		double valorAReceber = CotacaoDolar.conversaoDeBrlParaDolar(valorDoDolar, receberEmDolar);
+		
+		System.out.printf("Você receberá em dólar: $%.2f", valorAReceber );
+		
+		
+		
+		
+		
+		
+		
+		sc.close();
+		
+	}
+
+}
