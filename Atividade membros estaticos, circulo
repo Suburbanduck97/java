@@ -1,0 +1,44 @@
+package entites;
+
+public class Circulo {
+	public static final double PI = 3.14159;
+	
+	public static double circunferencia(double raio) {
+		return 2 * PI * raio;
+	}
+	
+	public static double volumeDoCirculo(double raio) {
+		return 4 * PI * (Math.pow(raio, 3.0)) / 3;
+	}
+
+}
+
+================================================================
+package udemy;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entites.Circulo;
+
+public class AtividadeCirculo {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Digite o valor do raio: ");
+		double raio = sc.nextDouble();
+		
+		double circunferencia = Circulo.circunferencia(raio);
+		double volume = Circulo.volumeDoCirculo(raio);
+		
+		System.out.printf("Circunfência: %.2f",circunferencia);
+		System.out.printf("\nVolume: %.2f", volume);
+		System.out.printf("\nValor de PI: %.2f",Circulo.PI);
+		
+		sc.close();
+	}
+
+}
+
