@@ -1,0 +1,104 @@
+package entities;
+
+public class ContaBancaria {
+	private int numeroDaContaBancaria;
+	private String nomeDoTitular;
+	private double valorSaldo;
+	private final double TAXA = 5.00;
+	
+	public ContaBancaria () {
+		
+	}
+	
+	public ContaBancaria(int numeroContaBancaria, String nomeDoTitular, double valorSaldo) {
+		this.numeroDaContaBancaria = numeroContaBancaria;
+		this.nomeDoTitular = nomeDoTitular;
+		this.valorSaldo = valorSaldo;
+	}
+	
+	public void deposito(double valorDeposito) {
+		this.valorSaldo += valorDeposito;
+	}
+	
+	public void saque(double valorSaque) {
+		this.valorSaldo = (valorSaldo - valorSaque) - TAXA;
+	}
+	
+	public void setNomeTitular(String nomeDoTitular) {
+		this.nomeDoTitular = nomeDoTitular;
+	}
+	
+	public double getNumeroConta() {
+		return numeroDaContaBancaria;
+	}
+	
+	public String getNomeTitular() {
+		return nomeDoTitular;
+	}
+	
+	public double getSaldoBancario() {
+		return valorSaldo;
+	}
+	
+	public String toString() {
+		return "Conta "
+				+ numeroDaContaBancaria
+				+ ", Titular: "
+				+ getNomeTitular()
+				+", Saldo: R$ "
+				+String.format("%.2f", getSaldoBancario());
+	}
+	
+}
+
+================================================================
+package udemy;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entities.ContaBancaria;
+
+public class AtividadeDoBanco {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		double valorSaldo = 0.0;
+		
+		System.out.print("Digite o número da sua conta bancária: ");
+		int numeroDaConta = sc.nextInt();
+		sc.nextLine();
+		System.out.print("Digite seu nome: ");
+		String nomeDoTitular = sc.nextLine();
+		System.out.print("Deseja depositar um valor inicial(s/n)? ");
+		char resposta = sc.next().charAt(0);
+		
+		if (resposta == 's' || resposta == 'S') {
+			System.out.print("Digite o valor que deseja depositar: ");
+			valorSaldo = sc.nextDouble();
+		}
+		
+		ContaBancaria conta = new ContaBancaria(numeroDaConta, nomeDoTitular, valorSaldo);
+		
+		System.out.println("\nDados da conta: ");
+		System.out.println(conta);
+		
+		System.out.print("\nDigite um valor de depósito: ");
+		double valorDeposito = sc.nextDouble();
+		conta.deposito(valorDeposito);
+		System.out.println("Dados bancários atualizados:");
+		System.out.println(conta);
+		
+		System.out.print("\nDigite um valor para saque: ");
+		double valorSaque = sc.nextDouble();
+		conta.saque(valorSaque);
+		System.out.println("Dados bancários atualizados:");
+		System.out.println(conta);
+		
+		sc.close();
+
+	}
+
+}
+
